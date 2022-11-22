@@ -1,13 +1,15 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/test')
 
-var inv = mongoose.model('inv', { name: String })
+var schema = mongoose.Schema({ name: String })
 
-var exort = new inv({ name: 'Exort' })
-exort.save(function (err) {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log('Sunstrike')
-    }
+schema.methods.bonk = function(){
+    console.log(this.get("name") + " casted. This is the Invoker's Orb. ")
+}
+
+var inv = mongoose.model('inv', schema)
+
+var jdm = new inv({ name: 'Exort' })
+jdm.save(function (err) {
+    jdm.bonk()
 })
