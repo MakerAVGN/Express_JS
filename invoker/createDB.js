@@ -9,9 +9,9 @@ await client.connect();
 var database = client.db("invoker");
 database.dropDatabase()
 database = client.db("invoker");
-const cats = database.collection("invoker");
-const result = await cats.insertOne({name:"Сфера"});
-console.log(`${result} documents were inserted`);
+const cats = database.collection("invoke");
+const result = await cats.insertMany({data});
+console.log(`${result.insertedCount} documents were inserted`);
 } finally {
 await client.close();
 }
