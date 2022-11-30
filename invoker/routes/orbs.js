@@ -8,7 +8,16 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
-/* Страница игры */
-router.get("/", function(req, res, next) {
-    res.send(req.params.nick);
-});
+/* Страница героев */
+router.get('/:nick', function(req, res, next) {
+    Inv.findOne({nick:req.params.nick}, function(err,inv){
+        if(err) return next(err)
+        if(!inv) return next(new Error("Нет такой сферы"))
+        res.render('inv', {
+            title: inv.title,
+            picture: inv.avatar,
+            desc: inv.desc
+        })
+    })
+})
+
