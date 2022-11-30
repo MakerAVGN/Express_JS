@@ -1,11 +1,11 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/test1')
-var inv = require("./models/Orb").Val
+var Inv = require("./models/invoker").Inv
 
 
-var inv = new inv({
+var inv = new Inv({
 title: "Exort",
-nick: "exort2"
+nick: "Rxort2"
 })
 
 
