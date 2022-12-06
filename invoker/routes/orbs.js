@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
-/* Страница героев */
+/* Страница сфер */
 router.get('/:nick', function(req, res, next) {
     Inv.findOne({nick:req.params.nick}, function(err,inv){
         if(err) return next(err)
