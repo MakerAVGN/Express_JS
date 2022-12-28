@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 module.exports = router;    
 
 /* Страница героев */
-router.get('/:nick', function(req, res, next) {
+router.get('/:nick', checkAuth,function(req, res, next) {
      async.parallel[
             function(callback){
                 Inv.findOne({nick:req.params.nick}, callback)

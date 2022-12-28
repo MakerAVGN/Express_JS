@@ -1,7 +1,9 @@
 var express = require('express')
 var router = express.Router()
+var checkAuth = require("./../middleware/checkAuth.js")
 var Inv = require("../models/invoker").Inv
 var User = require("./../models/user").User
+
 
 
 /* GET home page. */
