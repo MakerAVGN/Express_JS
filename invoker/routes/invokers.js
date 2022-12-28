@@ -22,8 +22,7 @@ router.get('/:nick', function(req, res, next) {
         ],
     Inv.findOne({nick:req.params.nick}, function(err,inv){
         if(err) return next(err)
-         var inv = result[0]
-         var inv = result[1] || []
+        
         if(!inv) return next(new Error("Нет такой сферы"))
         res.render('invoker', {
             title: inv.title,
