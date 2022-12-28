@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Inv = require("../models/invoker").Inv
+var User = require("./../models/user").User
 var async = require("async")
 
 /* GET users listing. */
@@ -22,7 +23,7 @@ router.get('/:nick', function(req, res, next) {
         ],
     Inv.findOne({nick:req.params.nick}, function(err,inv){
         if(err) return next(err)
-        
+
         if(!inv) return next(new Error("Нет такой сферы"))
         res.render('invoker', {
             title: inv.title,
