@@ -21,16 +21,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Главная</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/orbs/quas">Quas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/orbs/wex">Wex</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/orbs/exort">Exort</a>
-                </li>
             </ul>
+                <% menu.forEach(function(inv){ %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/invokers/<%=inv.nick%>">
+                            <%=inv.title%>
+                        </a>
+                    </li>
+                    <% }) %>
             <ul class="navbar-nav navbar-right">
                 <li>
                     <a class="nav-link" href="/logreg">Войти</a>
@@ -40,5 +38,5 @@
     </nav>
     <%- body %>
 </body>
- 
+
 </html>

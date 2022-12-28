@@ -5,7 +5,7 @@ var Inv = require("../models/invoker").Inv
 
 var inv = new Inv({
 title: "Exort",
-nick: "Rxort2"
+nick: "Exort2"
 })
 
 
